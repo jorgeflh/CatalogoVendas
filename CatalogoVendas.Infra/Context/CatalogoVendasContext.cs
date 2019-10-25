@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Models;
+using CatalogoVendas.Infra.Interfaces.Context;
 
 namespace CatalogoVendas.Infra.Context
 {
-    public partial class CatalogoVendasContext : DbContext
+    public partial class CatalogoVendasContext : DbContext, ICatalogoVendasContext
     {
         public CatalogoVendasContext()
         {
