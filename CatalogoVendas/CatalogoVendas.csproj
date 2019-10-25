@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogoVendas.Infra\CatalogoVendas.Infra.csproj" />
+    <ProjectReference Include="..\CatalogVendas.Core\CatalogVendas.Core.csproj" />
+  </ItemGroup>
+
+</Project>
