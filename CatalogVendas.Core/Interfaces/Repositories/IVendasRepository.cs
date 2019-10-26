@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatalogVendas.Core.Interfaces.Repositories
+namespace CatalogoVendas.Core.Interfaces.Repositories
 {
     public interface IVendasRepository
     {

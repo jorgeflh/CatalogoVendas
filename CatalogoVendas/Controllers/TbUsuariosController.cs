@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Models;
 using CatalogoVendas.Infra.Context;
-using CatalogVendas.Core.Interfaces.Repositories;
+using CatalogoVendas.Core.Interfaces.Repositories;
 
 namespace CatalogoVendas.Controllers
 {

@@ -1,10 +1,10 @@
 ﻿using CatalogoVendas.Core.Models;
 using CatalogoVendas.Infra.Context;
-using CatalogVendas.Core.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using CatalogoVendas.Core.Interfaces.Repositories;
 
 namespace CatalogoVendas.Infra.Repositories
 {
@@ -72,7 +72,7 @@ namespace CatalogoVendas.Infra.Repositories
                 await context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
