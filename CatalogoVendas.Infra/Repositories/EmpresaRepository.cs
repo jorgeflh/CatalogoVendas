@@ -1,6 +1,5 @@
 ﻿using CatalogoVendas.Core.Interfaces.Repositories;
 using CatalogoVendas.Core.Models;
-using CatalogoVendas.Infra.Interfaces.Context;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

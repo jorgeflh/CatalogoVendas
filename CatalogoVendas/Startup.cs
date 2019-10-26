@@ -24,6 +24,7 @@ namespace CatalogoVendas
             services.AddTransient<CatalogoVendasContext>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<ISegmentoEmpresaRepository, SegmentoEmpresaRepository>();
             services.AddControllersWithViews();
         }
 

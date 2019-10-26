@@ -48,7 +48,7 @@ namespace CatalogoVendas.Controllers
         // GET: TbEmpresas/Create
         public async Task<IActionResult> Create()
         {
-            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Cpf");
+            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Nome");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace CatalogoVendas.Controllers
                 if (companyWasCreated)
                     return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Cpf", tbEmpresa.IdUsuarioCadastro);
+            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Nome", tbEmpresa.IdUsuarioCadastro);
             return View(tbEmpresa);
         }
 
@@ -82,7 +82,7 @@ namespace CatalogoVendas.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Cpf", tbEmpresa.IdUsuarioCadastro);
+            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Nome", tbEmpresa.IdUsuarioCadastro);
             return View(tbEmpresa);
         }
 

@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Models;
-using CatalogoVendas.Infra.Interfaces.Context;
 
 namespace CatalogoVendas.Infra.Context
 {
-    public partial class CatalogoVendasContext : DbContext, ICatalogoVendasContext
+    public partial class CatalogoVendasContext : DbContext
     {
         public CatalogoVendasContext()
         {

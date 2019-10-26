@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CatalogoVendas.Core.Models.TbSegmentoEmpresa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DesSegmento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpresaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesSegmento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.Cnpj)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSegmento">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdSegmento">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSegmento">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
