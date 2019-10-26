@@ -10,9 +10,8 @@ namespace CatalogoVendas.Core.Interfaces.Repositories
     {
         Task<List<TbVendas>> GetVendas();
         Task<TbVendas> GetVendaById(int id);
-        void InsertVenda(TbVendas vendas);
-        void DeleteVenda(int id);
-        void UpdateVenda(TbVendas vendas);
-        void Save();
+        Task<bool> InsertVenda(TbVendas vendas);
+        Task<bool> DeleteVenda(int id);
+        Task<bool> UpdateVenda(TbVendas vendas);
     }
 }
