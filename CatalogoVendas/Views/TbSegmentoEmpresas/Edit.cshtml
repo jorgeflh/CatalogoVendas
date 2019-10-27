@@ -1,12 +1,12 @@
 ﻿@model CatalogoVendas.Core.Models.TbSegmentoEmpresa
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edição de Segmento";
 }
 
-<h1>Edit</h1>
-
-<h4>TbSegmentoEmpresa</h4>
+<div class="text-center">
+    <h1>Editar Segmento</h1>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -25,18 +25,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ativo" class="control-label"></label>
-                <input asp-for="Ativo" class="form-control" />
+                <select class="form-control" asp-for="Ativo">
+                    <option value="true">Ativo</option>
+                    <option value="false">Inativo</option>
+                </select>
                 <span asp-validation-for="Ativo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-info" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

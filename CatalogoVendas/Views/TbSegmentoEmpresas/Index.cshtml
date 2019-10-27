@@ -1,47 +1,59 @@
 ﻿@model IEnumerable<CatalogoVendas.Core.Models.TbSegmentoEmpresa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cadastro de Segmentos ";
 }
 
-<h1>Index</h1>
+<div class="text-center">
+    <h1>Cadastro de Segmentos</h1>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Novo Segmento</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpresaNavigation)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.DesSegmento)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdEmpresaNavigation)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DesSegmento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.RazaoSocial)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdSegmento">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdSegmento">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdSegmento">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.RazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesSegmento)
+                </td>
+                <td>
+                    @{
+                        if (item.Ativo == true)
+                        {
+                            @Html.Raw("Ativo");
+                        }
+                        else
+                        {
+                            @Html.Raw("Inativo");
+                        }
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.IdSegmento">Editar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IdSegmento">Detalhes</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdSegmento">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

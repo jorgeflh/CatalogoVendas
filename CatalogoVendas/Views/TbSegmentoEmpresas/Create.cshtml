@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>TbSegmentoEmpresa</h4>
+<div class="text-center">
+    <h1>Novo Segmento</h1>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdEmpresa" class="control-label"></label>
-                <select asp-for="IdEmpresa" class ="form-control" asp-items="ViewBag.IdEmpresa"></select>
+                <select asp-for="IdEmpresa" class="form-control" asp-items="ViewBag.IdEmpresa"></select>
             </div>
             <div class="form-group">
                 <label asp-for="DesSegmento" class="control-label"></label>
@@ -23,18 +23,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ativo" class="control-label"></label>
-                <input asp-for="Ativo" class="form-control" />
+                <select class="form-control" asp-for="Ativo">
+                    <option value="true">Ativo</option>
+                    <option value="false">Inativo</option>
+                </select>
                 <span asp-validation-for="Ativo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a class="btn btn-info" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
