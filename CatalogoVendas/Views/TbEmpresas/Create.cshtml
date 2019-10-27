@@ -1,12 +1,13 @@
 ﻿@model CatalogoVendas.Core.Models.TbEmpresa
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nova Empresa";
 }
 
-<h1>Create</h1>
+<div class="text-center">
+    <h1>Nova Empresa</h1>
+</div>
 
-<h4>TbEmpresa</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,7 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdUsuarioCadastro" class="control-label"></label>
-                <select asp-for="IdUsuarioCadastro" class ="form-control" asp-items="ViewBag.IdUsuarioCadastro"></select>
+                <select asp-for="IdUsuarioCadastro" class="form-control" asp-items="ViewBag.IdUsuarioCadastro"></select>
             </div>
             <div class="form-group">
                 <label asp-for="RazaoSocial" class="control-label"></label>
@@ -37,14 +38,11 @@
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-info" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
