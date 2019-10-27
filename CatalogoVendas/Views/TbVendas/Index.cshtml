@@ -1,25 +1,21 @@
 ﻿@model IEnumerable<CatalogoVendas.Core.Models.TbVendas>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cadastro de Vendas";
 }
 
-<h1>Index</h1>
+<div class="text-center">
+    <h1>Cadastro de Vendas</h1>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Nova Venda</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ValorVenda)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.DataVenda)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmitidoNf)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdEmpresaNavigation)
@@ -27,33 +23,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.IdUsuarioCadastroNavigation)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmitidoNf)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmitidoNf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.RazaoSocial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdUsuarioCadastroNavigation.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdVenda">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdVenda">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdVenda">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmitidoNf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.RazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdUsuarioCadastroNavigation.Nome)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.IdVenda">Editar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.IdVenda">Detalhes</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdVenda">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

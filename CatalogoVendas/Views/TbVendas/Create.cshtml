@@ -1,12 +1,12 @@
 ﻿@model CatalogoVendas.Core.Models.TbVendas
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastro de Vendas";
 }
 
-<h1>Create</h1>
-
-<h4>TbVendas</h4>
+<div class="text-center">
+    <h1>Nova Venda</h1>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,11 +14,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdEmpresa" class="control-label"></label>
-                <select asp-for="IdEmpresa" class ="form-control" asp-items="ViewBag.IdEmpresa"></select>
+                <select asp-for="IdEmpresa" class="form-control" asp-items="ViewBag.IdEmpresa"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdUsuarioCadastro" class="control-label"></label>
-                <select asp-for="IdUsuarioCadastro" class ="form-control" asp-items="ViewBag.IdUsuarioCadastro"></select>
+                <select asp-for="IdUsuarioCadastro" class="form-control" asp-items="ViewBag.IdUsuarioCadastro"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ValorVenda" class="control-label"></label>
@@ -32,18 +32,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="EmitidoNf" class="control-label"></label>
-                <input asp-for="EmitidoNf" class="form-control" />
+                <select class="form-control" asp-for="EmitidoNf">
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
                 <span asp-validation-for="EmitidoNf" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a class="btn btn-info" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
