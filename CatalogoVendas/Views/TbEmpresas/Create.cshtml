@@ -47,4 +47,18 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/js/jquery.mask.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Cnpj').mask('00.000.000/0000-00');
+            $('#Telefone').mask('(00) Z0000-0000', {
+                translation: {
+                    'Z': {
+                        pattern: /[0-9]/, optional: true
+                    }
+                }
+            });
+        });
+    </script>
 }

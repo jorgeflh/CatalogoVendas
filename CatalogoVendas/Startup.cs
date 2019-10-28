@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.VisualStudio.Web;
+using CatalogoVendas.Core.Services;
+using CatalogoVendas.Core.Interfaces.Services;
 
 namespace CatalogoVendas
 {
@@ -27,6 +29,8 @@ namespace CatalogoVendas
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
             services.AddScoped<ISegmentoEmpresaRepository, SegmentoEmpresaRepository>();
             services.AddScoped<IVendasRepository, VendasRepository>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IEmpresaService, EmpresaService>();
             services.AddControllersWithViews();
         }
 

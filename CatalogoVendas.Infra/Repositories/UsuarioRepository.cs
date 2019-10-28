@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Interfaces.Repositories;
+using System.Text.RegularExpressions;
 
 namespace CatalogoVendas.Infra.Repositories
 {
@@ -53,7 +54,7 @@ namespace CatalogoVendas.Infra.Repositories
         public async Task<bool> InsertUsuario(TbUsuario usuario)
         {
             try
-            {
+            {                
                 context.Add(usuario);
                 await context.SaveChangesAsync();
                 return true;

@@ -21,7 +21,6 @@ namespace CatalogoVendas.Core.Models
         public string Nome { get; set; }
         [Required]
         [Display(Name = "CPF")]
-        [MaxLength(11)]
         public string Cpf { get; set; }
         [Required]
         [Display(Name = "RG")]
@@ -29,7 +28,6 @@ namespace CatalogoVendas.Core.Models
         public string Rg { get; set; }
         [Required]
         [Display(Name = "Telefone")]
-        [MaxLength(13)]
         public string Telefone { get; set; }
         [Required]
         [Display(Name = "Login")]
@@ -41,7 +39,9 @@ namespace CatalogoVendas.Core.Models
         [MaxLength(30)]
         public string Senha { get; set; }
 
+        [Display(Name = "Empresa")]
         public virtual ICollection<TbEmpresa> TbEmpresa { get; set; }
+        [Display(Name = "Vendas")]
         public virtual ICollection<TbVendas> TbVendas { get; set; }
     }
 }

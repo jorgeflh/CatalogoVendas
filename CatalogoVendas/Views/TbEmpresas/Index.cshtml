@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CatalogoVendas.Core.Models.TbEmpresa>
+@using CatalogoVendas.Extensions
 
 @{
     ViewData["Title"] = "Cadastro de Empresas";
@@ -40,13 +41,13 @@
                     @Html.DisplayFor(modelItem => item.RazaoSocial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cnpj)
+                    @HtmlHelperExtensions.DisplayCNPJ(item.Cnpj)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Endereco)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Telefone)
+                    @HtmlHelperExtensions.DisplayTelefone(item.Telefone)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IdUsuarioCadastroNavigation.Nome)

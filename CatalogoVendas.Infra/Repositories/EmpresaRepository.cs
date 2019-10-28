@@ -53,7 +53,7 @@ namespace CatalogoVendas.Infra.Repositories
                 await context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

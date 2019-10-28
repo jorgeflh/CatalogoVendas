@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Models;
-using CatalogoVendas.Infra.Context;
 using CatalogoVendas.Core.Interfaces.Repositories;
+using CatalogoVendas.Core.Interfaces.Services;
 
 namespace CatalogoVendas.Controllers
 {
@@ -15,11 +11,16 @@ namespace CatalogoVendas.Controllers
     {
         private readonly IEmpresaRepository empresaRepository;
         private readonly IUsuarioRepository usuarioRepository;
+        private readonly IEmpresaService empresaService;
 
-        public TbEmpresasController(IEmpresaRepository empresaRepository, IUsuarioRepository usuarioRepository)
+        public TbEmpresasController(
+            IEmpresaRepository empresaRepository,
+            IUsuarioRepository usuarioRepository,
+            IEmpresaService empresaService)
         {
             this.empresaRepository = empresaRepository;
             this.usuarioRepository = usuarioRepository;
+            this.empresaService = empresaService;
         }
 
         // GET: TbEmpresas
@@ -61,7 +62,7 @@ namespace CatalogoVendas.Controllers
         {
             if (ModelState.IsValid)
             {
-                var companyWasCreated = await empresaRepository.InsertEmpresa(tbEmpresa);
+                var companyWasCreated = await empresaService.InsertCompany(tbEmpresa);
                 if (companyWasCreated)
                     return RedirectToAction(nameof(Index));
             }
@@ -100,11 +101,11 @@ namespace CatalogoVendas.Controllers
 
             if (ModelState.IsValid)
             {
-                var companyWasUpdated = await empresaRepository.UpdateEmpresa(tbEmpresa);
+                var companyWasUpdated = await empresaService.UpdateCompany(tbEmpresa);
                 if (companyWasUpdated)
                     return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Cpf", tbEmpresa.IdUsuarioCadastro);
+            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Nome", tbEmpresa.IdUsuarioCadastro);
             return View(tbEmpresa);
         }
 

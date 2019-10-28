@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using CatalogoVendas.Core.Models;
-using CatalogoVendas.Infra.Context;
 using CatalogoVendas.Core.Interfaces.Repositories;
+using CatalogoVendas.Core.Interfaces.Services;
 
 namespace CatalogoVendas.Controllers
 {
     public class TbUsuariosController : Controller
     {
         private readonly IUsuarioRepository usuarioRepository;
+        private readonly IUsuarioService usuarioService;
 
-        public TbUsuariosController(IUsuarioRepository usuarioRepository)
+        public TbUsuariosController(IUsuarioRepository usuarioRepository, IUsuarioService usuarioService)
         {
             this.usuarioRepository = usuarioRepository;
+            this.usuarioService = usuarioService;
         }
 
         // GET: TbUsuarios
@@ -59,7 +56,7 @@ namespace CatalogoVendas.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userWasCreated = await usuarioRepository.InsertUsuario(tbUsuario);
+                var userWasCreated = await usuarioService.InsertUser(tbUsuario);
 
                 if (userWasCreated)
                     return RedirectToAction(nameof(Index));
@@ -97,7 +94,7 @@ namespace CatalogoVendas.Controllers
 
             if (ModelState.IsValid)
             {
-                var userWasUpdated = await usuarioRepository.UpdateUsuario(tbUsuario);
+                var userWasUpdated = await usuarioService.UpdateUser(tbUsuario);
 
                 if (userWasUpdated)
                     return RedirectToAction(nameof(Index));
