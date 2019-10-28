@@ -108,13 +108,13 @@ namespace CatalogoVendas.Controllers
 
             if (ModelState.IsValid)
             {
-                var orderWasUpdated = await vendasRepository.InsertVenda(tbVendas);
+                var orderWasUpdated = await vendasRepository.UpdateVenda(tbVendas);
 
                 if (orderWasUpdated)
                     return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEmpresa"] = new SelectList(await empresaRepository.GetEmpresas(), "IdEmpresa", "Cnpj", tbVendas.IdEmpresa);
-            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Cpf", tbVendas.IdUsuarioCadastro);
+            ViewData["IdEmpresa"] = new SelectList(await empresaRepository.GetEmpresas(), "IdEmpresa", "RazaoSocial", tbVendas.IdEmpresa);
+            ViewData["IdUsuarioCadastro"] = new SelectList(await usuarioRepository.GetUsuarios(), "IdUsuario", "Nome", tbVendas.IdUsuarioCadastro);
             return View(tbVendas);
         }
 
@@ -126,7 +126,7 @@ namespace CatalogoVendas.Controllers
                 return NotFound();
             }
 
-            var tbVendas = await empresaRepository.GetEmpresaById(id.Value);
+            var tbVendas = await vendasRepository.GetVendaById(id.Value);
             if (tbVendas == null)
             {
                 return NotFound();

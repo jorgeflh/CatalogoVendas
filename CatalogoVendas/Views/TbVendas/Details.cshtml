@@ -11,22 +11,10 @@
 <div>
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorVenda)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ValorVenda)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DataVenda)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataVenda)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EmitidoNf)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.EmitidoNf)
+            @Model.DataVenda.Value.ToShortDateString()
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.IdEmpresaNavigation)
@@ -39,6 +27,26 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.IdUsuarioCadastroNavigation.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorVenda)
+        </dt>
+        <dd class="col-sm-10">
+            R$ @Html.DisplayFor(model => model.ValorVenda)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EmitidoNf)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.EmitidoNf == true)
+            {
+                @Html.Raw("Sim")
+            }
+            else
+            {
+                @Html.Raw("Não")
+            }
         </dd>
     </dl>
 </div>

@@ -1,4 +1,5 @@
 ﻿@model CatalogoVendas.Core.Models.TbUsuario
+@using CatalogoVendas.Extensions
 
 @{
     ViewData["Title"] = "Exclusão de Usuário";
@@ -20,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Cpf)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cpf)
+            @HtmlHelperExtensions.DisplayCPF(Model.Cpf)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Rg)
@@ -32,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Telefone)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Telefone)
+            @HtmlHelperExtensions.DisplayTelefone(Model.Telefone)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DesLogin)

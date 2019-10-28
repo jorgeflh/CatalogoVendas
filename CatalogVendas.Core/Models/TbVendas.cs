@@ -17,7 +17,6 @@ namespace CatalogoVendas.Core.Models
         public int IdUsuarioCadastro { get; set; }
         [Required]
         [Display(Name = "Valor")]
-        [DataType(DataType.Currency)]
         public decimal ValorVenda { get; set; }
         [Required]
         [Display(Name = "Data")]

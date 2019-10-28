@@ -37,19 +37,26 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DataVenda)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EmitidoNf)
+                    @item.DataVenda.Value.ToShortDateString()
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.RazaoSocial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ValorVenda)
+                    @Html.DisplayFor(modelItem => item.IdUsuarioCadastroNavigation.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdUsuarioCadastroNavigation.Nome)
+                    R$ @Html.DisplayFor(modelItem => item.ValorVenda)
+                </td>
+                <td>
+                    @if (item.EmitidoNf == true)
+                    {
+                        @Html.Raw("Sim")
+                    }
+                    else
+                    {
+                        @Html.Raw("Não")
+                    }
                 </td>
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.IdVenda">Editar</a>
