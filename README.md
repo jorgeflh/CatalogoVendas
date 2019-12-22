@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Sistema para catalogar as vendas dos clientes de uma empresa fictícia.
+Sistema para catalogar as vendas dos clientes de uma empresa fictí­cia.
 
 ### Pré-Requisitos
 
@@ -18,8 +18,3 @@ Alterar a string de conexão dentro do projeto CatalogoVendas/Infra/Context/Catal
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Para futuras implementações
-
-* Adicionar login de usuário
-* Adicionar pesquisas nas seções
