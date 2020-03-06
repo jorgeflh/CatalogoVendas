@@ -1,15 +1,15 @@
-# Cat·logo de Vendas
+# Cat√°logo de Vendas
 
-## DescriÁ„o
+## Descri√ß√£o
 
-Sistema para catalogar as vendas dos clientes de uma empresa fictÌ≠cia.
+Sistema para catalogar as vendas dos clientes de uma empresa fict√≠¬≠cia.
 
-### PrÈ-Requisitos
+### Pr√©-Requisitos
 
-Rodar o script script_create_database.sql, ele j· ir· criar a base de dados, tabelas e inserir dados para teste. 
-(Obs: As datas est„o sendo criadas no formato "dd/MM/yyyy", alterar para a collation do seu banco local).
+Rodar o script script_create_database.sql, ele j√° ir√° criar a base de dados, tabelas e inserir dados para teste. 
+(Obs: As datas est√£o sendo criadas no formato "dd/MM/yyyy", alterar para a collation do seu banco local).
 
-Alterar a string de conex„o dentro do projeto CatalogoVendas/Infra/Context/CatalogoVendasContext.cs
+Alterar a string de conex√£o dentro do projeto CatalogoVendas/Infra/Context/CatalogoVendasContext.cs
 
 ## Autor
 
@@ -17,4 +17,4 @@ Alterar a string de conex„o dentro do projeto CatalogoVendas/Infra/Context/Catal
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
